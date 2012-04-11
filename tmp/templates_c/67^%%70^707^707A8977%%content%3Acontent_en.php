@@ -1,0 +1,3 @@
+<?php /* Smarty version 2.6.26, created on 2012-04-11 07:07:28
+         compiled from content:content_en */ ?>
+Dr. TARIQ ASHRAF<br />Deputy Librarian &amp; Head <br />South Delhi Campus Library<br />University of DelhiDelhi-110 021. (India)<br /> <br />Ph:+91-11-2411 0221,<br />+91-11-2411 2231 (Extn. : 243)<br /> <br />Fax: +91-11-2411 0221<br />Email:librarian@south.du.ac.in <!-- Add code here that should appear in the content block of all new pages -->

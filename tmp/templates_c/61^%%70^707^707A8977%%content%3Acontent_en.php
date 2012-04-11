@@ -1,0 +1,6 @@
+<?php /* Smarty version 2.6.26, created on 2012-04-11 06:42:34
+         compiled from content:content_en */ ?>
+<p> </p>
+<p><br />The Aravali P.G. Men’s Hostel has started functioning from the academic session 2005-06. It is a hostel of residence for full time Ph.D., M. Phil. and Post graduate students admitted at South Campus.  The Hostel has accommodation for 74 students on single occupancy basis.  In addition, the Hostel has guest room, visitor’s room, dining hall, internet access and facilities for indoor and outdoor sports and recreation.  Wi-Fi facilities are also available for the residents.  The internal administration and discipline of the hostel is under the overall charge of the Provost.<br /> <br />Admission Schedule <br />First Round: Last date of receipt of Application Forms - 30 June 2011 up to 01:00 pm<br />Date of Interview 1st July 2011 <br />Second Round: Last date of receipt of Application Forms - 20 July 2010 up to 01:00 pm <br />Date of Interview 25 July 2011<br />Third Round :    Last date of receipt of Application Forms - 23 August 2011  to 29 August 2011.No form will be accepted after 1:00p.m of 29 August 2011. </p>
+<p><br />Please contact hostel office for more details</p>
+<!-- Add code here that should appear in the content block of all new pages -->

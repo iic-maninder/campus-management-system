@@ -1,0 +1,195 @@
+a:10:{s:10:"content_id";s:2:"77";s:12:"content_type";s:7:"content";s:5:"title";s:12:"Availability";s:8:"menutext";s:12:"Availability";s:7:"content";s:130:"<p><!-- Add code here that should appear in the content block of all new pages -->{FormBuilder form='Availability'}</p>
+<p> </p>";s:11:"template_id";s:2:"22";s:9:"hierarchy";s:4:"11.1";s:8:"template";s:7560:"{process_pagedata}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+{* Change lang="en" to the language of your site *}
+
+{* note: anything inside these are smarty comments, they will not show up in the page source *}
+  <head>
+{if isset($canonical)}<link rel="canonical" href="{$canonical}" />{elseif isset($content_obj)}<link rel="canonical" href="{$content_obj->GetURL()}" />{/if}
+
+<title>{title} | {sitename}</title>
+{* The sitename is changed in Site Admin/Global settings. {title} is the name of each page *}
+
+{metadata}
+{* Don't remove this! Metadata is entered in Site Admin/Global settings. *}
+
+{cms_stylesheet}
+{* This is how all the stylesheets attached to this template are linked to *}
+
+{cms_selflink dir="start" rellink=1}
+{cms_selflink dir="prev" rellink=1}
+{cms_selflink dir="next" rellink=1}
+{* Relational links for interconnections between pages, good for accessibility and Search Engine Optmization *}
+
+<!--[if IE 6]>
+<script type="text/javascript" src="modules/MenuManager/CSSMenu.js"></script>
+<![endif]-->
+{* The above JavaScript is required for Menu - NCleanBlue-css to work in IE6 *}
+
+{* the literal below and the /literal at the end are needed whenever there are {"curly brackets"} as smarty will think it's something to process and will throw an error *}
+{* IE6 png fix *}
+{literal}
+<!--[if IE 6]>
+<script type="text/javascript"  src="uploads/NCleanBlue/js/ie6fix.js"></script>
+<script type="text/javascript">
+ // argument is a CSS selector
+ DD_belatedPNG.fix('.sbar-top,.sbar-bottom,.main-top,.main-bottom,#version');
+</script>
+<style type="text/css">
+/* enable background image caching in IE6 */
+html {filter:expression(document.execCommand("BackgroundImageCache", false, true));} 
+</style>
+<![endif]-->
+{/literal}
+
+  </head>
+  <body>
+    <div id="ncleanblue">
+      <div id="pagewrapper" class="core-wrap-960 core-center">
+{* start accessibility skip links *}
+        <ul class="accessibility">
+          <li>{anchor anchor='menu_vert' title='Skip to navigation' accesskey='n' text='Skip to navigation'}</li>
+          <li>{anchor anchor='main' title='Skip to content' accesskey='s' text='Skip to content'}</li>
+        </ul>
+{* end accessibility skip links *}
+        <hr class="accessibility" />
+{* Horizontal ruler that is hidden for visual browsers by CSS *}
+
+{* Start Header, with logo image that links to the default start page *}
+        <div id="header" class="util-clearfix">
+{* logo image that links to the default start page. Logo image is changed in the style sheet  "Layout: NCleanBlue" *}
+          <div id="logo" class="core-float-left">
+            {cms_selflink dir="start" text="$sitename"}
+          </div>
+          
+{* Start Search, the input "Submit" is using an image, CSS: div#search input.search-button *}
+          <div id="search" class="core-float-right">
+            {search search_method="post"}
+          </div>
+{* End Search *}
+          <span class="util-clearb">&nbsp;</span>
+          
+{* Start Navigation, style sheet  "Layout: NCleanBlue", starting at Menu  ROOT *}
+          <h2 class="accessibility util-clearb">Navigation</h2>
+{* anything class="accessibility" is hidden for visual browsers by CSS *}
+          <div class="page-menu util-clearfix">
+          {menu loadprops=0 template='cssmenu_ulshadow.tpl'}
+          </div>
+          <hr class="accessibility util-clearb" />
+{* End Navigation *}
+
+        </div>
+{* End Header *}
+
+{* Start Content (Navigation and Content columns) *}
+        <div id="content" class="util-clearfix"> 
+
+{* Start Optional tag CMS Version Information, also is a good example how smarty works, the big star that holds the version number, you may remove it here and the style sheet where it is marked. *}
+          <div title="CMS - {cms_version} - {cms_versionname}" id="version">
+          {capture assign='cms_version'}{cms_version|lower}{/capture}{"/-([a-z]).*/"|preg_replace:"":$cms_version}
+          </div>
+{* End Optional tag  *}
+
+{* Start Bar *}
+          <div id="bar" class="util-clearfix">
+{* Start Breadcrumbs, a bit of letting you know where your at *}
+            <div class="breadcrumbs core-float-right">
+              {breadcrumbs starttext='You are here' root='Home' delimiter='&raquo;'}
+            </div>
+{* End Breadcrumbs *}
+
+            <hr class="accessibility util-clearb" />
+          </div>
+{* End Bar *}
+
+{* Start left side *}
+          <div id="left" class="core-float-left">
+            <div class="sbar-top">
+              <h2 class="sbar-title">News</h2>
+            </div>
+            <div class="sbar-main">
+{* Start News *}
+              <div id="news">
+              {news number='3' detailpage='news'}
+              </div>
+              <img class="screen" src="uploads/NCleanBlue/screen-1.6.jpg" width="139" height="142" title="CMS - {cms_version} - {cms_versionname}" alt="CMS - {cms_version} - {cms_versionname}" />
+{* End News *} 
+            </div>
+            <span class="sbar-bottom">&nbsp;</span> 
+          </div>
+{* End left side *}
+
+{* Start Content Area, right side *}
+          <div id="main"  class="core-float-right">
+
+{* main top, holds top image and print image *}
+            <div class="main-top">
+              <div class="print core-float-right">
+                {print showbutton=true}
+              </div>
+            </div> 
+            
+{* main content *}
+            <div class="main-main util-clearfix">
+              <h1 class="title">{title}</h1>
+            {content}
+            </div>
+            
+{* Start main bottom and relational links *}
+            <div class="main-bottom">
+              <div class="right49 core-float-right">
+              {anchor anchor='main' text='^&nbsp;&nbsp;Top'}
+              </div>
+              <div class="left49 core-float-left">
+                <span>
+                  {cms_selflink dir="previous" label="Previous page: "}&nbsp;
+{* The label parameter doesn't need to be there if you're using English, but is here to show how it's used if you don't want the English text "Previous page" *}
+                </span>
+                <span>
+                  {cms_selflink dir="next"}&nbsp;
+                </span>
+              </div>
+{* End relational links *}
+
+              <hr class="accessibility" />
+            </div>
+{* End main bottom *}
+
+          </div>
+{* End Content Area, right side *}
+
+        </div>
+{* End Content *}
+
+      </div>
+{* end pagewrapper *}
+      <span class="util-clearb">&nbsp;</span>
+      
+{* Start Footer *}
+      <div id="footer-wrapper">
+        <div id="footer" class="core-wrap-960">
+{* first foot menu *}
+          <div class="block core-float-left">
+            {menu loadprops=0 template='minimal_menu.tpl'  number_of_levels='1'}
+          </div>
+          
+{* second foot menu if active page has children *}
+          <div class="block core-float-left">
+            {menu loadprops=0 template='minimal_menu.tpl'  start_level="2"}
+          </div>
+          
+{* edit the footer in the Global Content Block called "footer" *}
+          <div class="block cms core-float-left">
+            {global_content name='footer'}
+          </div>
+          
+          <span class="util-clearb">&nbsp;</span>
+        </div>
+      </div>
+{* End Footer *}
+    </div>
+{* End Div *}
+  </body>
+</html>";s:8:"encoding";s:5:"utf-8";s:18:"serialized_content";s:3856:"O:7:"Content":42:{s:17:" * _contentBlocks";a:1:{s:10:"content_en";a:8:{s:4:"type";s:4:"text";s:2:"id";s:10:"content_en";s:10:"usewysiwyg";s:4:"true";s:7:"oneline";s:5:"false";s:7:"default";s:0:"";s:5:"label";s:0:"";s:4:"size";s:2:"50";s:9:"maxlength";s:3:"255";}}s:23:" * _contentBlocksLoaded";b:1;s:23:" * doAutoAliasIfEnabled";b:1;s:13:" * stylesheet";s:31:"../stylesheet.php?templateid=22";s:6:" * mId";s:2:"77";s:8:" * mName";s:12:"Availability";s:8:" * mType";s:7:"content";s:9:" * mOwner";s:1:"1";s:14:" * mProperties";O:17:"ContentProperties":4:{s:14:"mPropertyNames";a:10:{i:0;s:6:"target";i:1;s:5:"image";i:2;s:9:"thumbnail";i:3;s:6:"extra1";i:4;s:6:"extra2";i:5;s:6:"extra3";i:6;s:10:"searchable";i:7;s:8:"pagedata";i:8;s:15:"disable_wysiwyg";i:9;s:10:"content_en";}s:14:"mPropertyTypes";a:10:{s:6:"target";s:6:"string";s:5:"image";s:6:"string";s:9:"thumbnail";s:6:"string";s:6:"extra1";s:6:"string";s:6:"extra2";s:6:"string";s:6:"extra3";s:6:"string";s:10:"searchable";s:6:"string";s:8:"pagedata";s:6:"string";s:15:"disable_wysiwyg";s:6:"string";s:10:"content_en";s:6:"string";}s:15:"mPropertyValues";a:10:{s:6:"target";s:0:"";s:5:"image";s:2:"-1";s:9:"thumbnail";s:2:"-1";s:6:"extra1";s:0:"";s:6:"extra2";s:0:"";s:6:"extra3";s:0:"";s:10:"searchable";s:1:"1";s:8:"pagedata";s:0:"";s:15:"disable_wysiwyg";s:1:"0";s:10:"content_en";s:130:"<p><!-- Add code here that should appear in the content block of all new pages -->{FormBuilder form='Availability'}</p>
+<p> </p>";}s:21:"mAllowedPropertyNames";N;}s:20:" * mPropertiesLoaded";b:1;s:12:" * mParentId";s:2:"76";s:15:" * mOldParentId";s:2:"76";s:14:" * mTemplateId";s:2:"22";s:13:" * mItemOrder";s:1:"1";s:16:" * mOldItemOrder";s:1:"1";s:12:" * mMetadata";s:79:"{* Add code here that should appear in the metadata section of all new pages *}";s:18:" * mTitleAttribute";s:0:"";s:13:" * mAccessKey";s:0:"";s:12:" * mTabIndex";s:0:"";s:13:" * mHierarchy";s:11:"00011.00001";s:15:" * mIdHierarchy";s:5:"76.77";s:17:" * mHierarchyPath";s:22:"resources/availability";s:12:" * mMenuText";s:12:"Availability";s:10:" * mActive";s:1:"1";s:9:" * mAlias";s:12:"availability";s:12:" * mOldAlias";s:12:"availability";s:12:" * mCachable";s:1:"1";s:10:" * mSecure";s:1:"0";s:7:" * mURL";s:0:"";s:11:" * mPreview";b:1;s:14:" * mShowInMenu";s:1:"0";s:18:" * mDefaultContent";b:0;s:10:" * mMarkup";s:4:"html";s:18:" * mLastModifiedBy";s:1:"1";s:16:" * mCreationDate";s:19:"2012-04-11 07:51:34";s:16:" * mModifiedDate";s:19:"2012-04-11 08:06:37";s:21:" * mAdditionalEditors";a:0:{}s:16:" * mReadyForEdit";b:1;s:24:" ContentBase _attributes";a:25:{i:0;a:3:{i:0;s:6:"target";i:1;i:10;i:2;i:0;}i:1;a:3:{i:0;s:5:"title";i:1;i:1;i:2;i:1;}i:2;a:3:{i:0;s:8:"menutext";i:1;i:2;i:2;i:1;}i:3;a:3:{i:0;s:8:"page_url";i:1;i:3;i:2;i:0;}i:4;a:3:{i:0;s:6:"parent";i:1;i:4;i:2;i:1;}i:5;a:3:{i:0;s:6:"active";i:1;i:5;i:2;i:0;}i:6;a:3:{i:0;s:10:"showinmenu";i:1;i:5;i:2;i:0;}i:7;a:3:{i:0;s:6:"secure";i:1;i:6;i:2;i:0;}i:8;a:3:{i:0;s:8:"cachable";i:1;i:7;i:2;i:0;}i:9;a:3:{i:0;s:5:"alias";i:1;i:10;i:2;i:0;}i:10;a:3:{i:0;s:14:"titleattribute";i:1;i:55;i:2;i:0;}i:11;a:3:{i:0;s:9:"accesskey";i:1;i:56;i:2;i:0;}i:12;a:3:{i:0;s:8:"tabindex";i:1;i:57;i:2;i:0;}i:13;a:3:{i:0;s:5:"owner";i:1;i:90;i:2;i:0;}i:14;a:3:{i:0;s:17:"additionaleditors";i:1;i:91;i:2;i:0;}i:15;a:3:{i:0;s:5:"image";i:1;i:50;i:2;i:0;}i:16;a:3:{i:0;s:9:"thumbnail";i:1;i:50;i:2;i:0;}i:17;a:3:{i:0;s:6:"extra1";i:1;i:80;i:2;i:0;}i:18;a:3:{i:0;s:6:"extra2";i:1;i:81;i:2;i:0;}i:19;a:3:{i:0;s:6:"extra3";i:1;i:82;i:2;i:0;}i:20;a:3:{i:0;s:8:"template";i:1;i:4;i:2;i:0;}i:21;a:3:{i:0;s:12:"pagemetadata";i:1;i:20;i:2;i:0;}i:22;a:3:{i:0;s:10:"searchable";i:1;i:8;i:2;i:0;}i:23;a:3:{i:0;s:8:"pagedata";i:1;i:25;i:2;i:0;}i:24;a:3:{i:0;s:15:"disable_wysiwyg";i:1;i:60;i:2;i:0;}}s:27:" ContentBase _prop_defaults";N;s:22:" ContentBase _add_mode";N;s:19:" ContentBase _error";N;}";}
